@@ -1,0 +1,174 @@
+Your Learning Roadmap: From Beginner to a Working Online Store
+
+One continuous path built on a single language (JavaScript/TypeScript). Each phase reuses what the last one taught, so nothing is a dead end.
+
+How to use this
+Pace assumption: a few hours a week (casual). At that pace, the core path (Phases 1–7) realistically takes ~8–14 months. That's normal — slow and consistent beats burning out.
+Markers:
+[Must-learn] — you can't reach a working store without it.
+[Optional] — nice-to-have; skip or defer without breaking the path.
+Golden rule: don't move to the next phase until you've built the small project at the end of the current one. Building is where it sticks.
+Check items off as you go: [ ] → [x].
+Phase 1 — Foundations: the language + the web
+
+Time: ~6–10 weeks
+
+This is the ground floor. Everything else is JavaScript pointed in different directions, so this phase pays off forever.
+
+ Dev setup (VS Code editor, Node.js installed, a terminal) — [Must-learn]
+What it is: the tools you write and run code with.
+Used for: all three goals — you can't build anything without it.
+Why here: you need somewhere to type code before you can learn to code.
+ Git + GitHub (basics only) (version control) — [Must-learn]
+What it is: a way to save snapshots of your work and back it up online.
+Used for: every project; also how you'll later deploy to hosting.
+Why here: start the habit early; you only need add, commit, push for now.
+ HTML & CSS (basics) — [Must-learn]
+What it is: the structure (HTML) and styling (CSS) of every web page.
+Used for: websites and the storefront; also underlies how React renders.
+Why here: React and Next.js produce HTML/CSS under the hood — you need to recognize what they're generating.
+ JavaScript fundamentals (variables, functions, arrays, objects, loops, and async/await) — [Must-learn]
+What it is: the core programming language of your entire stack.
+Used for: literally everything — personal apps, websites, store, mobile.
+Why here: it's the shared floor. React is JS, the server is JS, database access is JS. Master this and the rest is variations on a theme.
+
+Small project: a single-page personal site with one interactive feature — e.g. a tip calculator or a "days until my birthday" counter. Plain HTML/CSS/JS, no frameworks. (This is the seed of your store's future marketing site.)
+
+→ Connects forward: once you can make a page do something with JavaScript, React is just a much better, organized way to do exactly that.
+
+Phase 2 — React: building real interfaces
+
+Time: ~5–8 weeks
+
+ React (components, props, state, and the useState / useEffect hooks) — [Must-learn]
+What it is: a JavaScript library for building user interfaces out of reusable pieces ("components").
+Used for: the UI of personal apps, websites, the storefront — and later, mobile apps (same concepts).
+Why here: it builds directly on your Phase 1 JavaScript. You're not learning a new language, just a new way to organize the JS you already know.
+ Component thinking (breaking a screen into small reusable parts) — [Must-learn]
+What it is: the mental model behind everything in React and Next.js.
+Used for: every interface you'll ever build.
+Why here: it's the habit the rest of the roadmap assumes.
+
+Small project: a personal habit tracker or notes app that works entirely in the browser (data lives in memory for now — no saving yet). (You'll add real saving in Phase 4; the store's product grid will reuse this exact list-and-card pattern.)
+
+→ Connects forward: React on its own can't make full websites or talk to a server. Next.js wraps React to add both — that's Phase 3.
+
+Phase 3 — Next.js + Tailwind + hosting: real, live websites
+
+Time: ~6–10 weeks
+
+This is the hub of your whole stack. After this phase you can put real sites online.
+
+ Next.js (routing/pages, server functions, server-side rendering) — [Must-learn]
+What it is: a framework built on React that also runs your server (Node.js) code in the same project.
+Used for: proper multi-page websites, the store's storefront and marketing site, and personal apps that need a server.
+Why here: it directly extends Phase 2 React. It's the single tool that unites your front end and back end — the center of the "one system" idea.
+ Tailwind CSS (utility-based styling) — [Must-learn]
+What it is: a faster, more consistent way to write CSS, right in your markup.
+Used for: styling every site and app to look polished.
+Why here: learn it alongside Next.js, not separately — you style as you build.
+ Vercel (hosting/deployment) — [Must-learn]
+What it is: a service that puts your Next.js site online with (almost) one step.
+Used for: making any website or app publicly reachable.
+Why here: it's purpose-built for Next.js, and you'll want to see a real site live to stay motivated. Uses your Phase 1 Git habit to deploy.
+
+Small project: the actual marketing website for your store — a few styled pages (home, about, contact), deployed live on Vercel. (This is a real deliverable you keep and grow into the storefront.)
+
+→ Connects forward: your site looks great but forgets everything on refresh. To remember products, orders, and users, you need a database — Phase 4.
+
+Phase 4 — Data: Prisma + PostgreSQL
+
+Time: ~4–7 weeks
+
+ PostgreSQL (via a hosted provider like Neon or Supabase) — [Must-learn]
+What it is: the database engine that stores your data reliably. A managed host runs it for you so you don't babysit a server.
+Used for: your store's product catalog and orders; any personal app that saves data.
+Why here: it's the one genuinely separate piece, but you only add it once you have a Next.js app that needs to remember things.
+ Prisma (the TypeScript bridge to the database) — [Must-learn]
+What it is: a tool that lets you read/write the database using JavaScript objects instead of raw database language (SQL).
+Used for: all data access across every app and the store.
+Why here: it keeps you in your one language. It plugs into Next.js server functions from Phase 3.
+ A little SQL (reading it) — [Optional]
+What it is: the database's own query language, which Prisma mostly hides.
+Used for: debugging tricky data problems later.
+Why here/optional: Prisma covers ~95% of what you need; learn SQL only if you hit a wall.
+
+Small project: a product catalog page that loads ~100 products from the database and lets you search/filter them. (This is now the literal heart of your store.)
+
+→ Connects forward: your app now handles real data, and your codebase is getting big enough that small typos cause real bugs. Time to add a safety net — Phase 5.
+
+Phase 5 — TypeScript: making it robust
+
+Time: ~3–5 weeks
+
+ TypeScript (JavaScript with type checking) — [Must-learn]
+What it is: your same language with labels on your data, so mistakes show up as you type instead of when a customer hits them.
+Used for: all three goals — but it matters most for the store, where bugs cost real money.
+Why here: deliberately placed after you're comfortable, because it's far easier to learn by adding types to code you already understand than to learn it cold. It's the same language, turned up a notch — not a new one.
+
+Small project: convert your Phase 4 product catalog to TypeScript. Same app, now type-safe. (You'll feel the editor catch mistakes for you.)
+
+→ Connects forward: you now have a solid, type-safe app that shows products. A store needs two more things before it can take money: accounts and payments — Phase 6.
+
+Phase 6 — Accounts + payments
+
+Time: ~5–8 weeks
+
+ Authentication (Auth.js, or a service like Clerk) — [Must-learn]
+What it is: user accounts and login — including an admin login for you to manage products.
+Used for: the store's admin area and customer accounts; any personal app that needs a login.
+Why here: it builds on your Next.js server + database from Phases 3–4.
+ Stripe (payments/checkout) — [Must-learn]
+What it is: the service that securely handles card payments. You never touch raw card numbers — Stripe does.
+Used for: taking payments for your store's physical products.
+Why here: it's a mandatory separate service (handling cards yourself is a legal and security minefield), and it slots into your Node/Next.js server with a TypeScript SDK. It comes last of the "must" pieces because it needs the catalog, accounts, and data all in place first.
+
+Small project: add a working checkout (in Stripe's test mode) to your catalog, so you can "buy" a product end to end. (You now have a minimal but genuinely real online store.)
+
+→ Connects forward: you've built a store from scratch and understand every piece. Now make the real decision: build it fully yourself, or stand on a platform — Phase 7.
+
+Phase 7 — Launching the real store: build vs. platform
+
+Time: ~4–8 weeks (depends on the path you pick)
+
+By now you can build a store from scratch — but for a real, revenue-earning store as a part-time solo developer, a hybrid is usually smarter. Pick one:
+
+ Path A — Shopify (fully hosted) — [Must-learn: pick A or B]
+What it is: a platform that handles products, checkout, payments, and taxes for you.
+Used for: selling fast with the least maintenance. Comfortable for ~100 products and growth.
+Why here: fastest route to actually selling. Trade-off: deep theme customization uses Shopify's own templating, outside your React world.
+ Path B — Headless commerce (Medusa or Shopify Storefront API) + your Next.js storefront — [Must-learn: pick A or B]
+What it is: a commerce backend handles products/checkout/payments while you build the storefront in Next.js. Medusa is written in Node.js/TypeScript — the same language as the rest of your stack, so it's the most seamless fit.
+Used for: a custom-looking store that reuses everything you learned, without reinventing payments.
+Why here: it's the natural payoff of Phases 1–6 — your React/Next.js skills build the storefront; the platform handles the risky parts.
+
+Suggested call: launch on Shopify (Path A) first to start selling early, then rebuild the storefront with Path B later if you want full control of the look. Nothing you learned is wasted either way.
+
+Small project: your live store — either ~100 real products on Shopify, or a Next.js storefront running against Medusa/Shopify with a real (or test) checkout. (This is the finish line of the core roadmap.)
+
+→ Connects forward: with a working web store, the only remaining direction is a phone — Phase 8, entirely optional.
+
+Phase 8 — Mobile apps (optional)
+
+Time: ~6–10 weeks — [Optional / nice-to-have]
+
+ React Native + Expo — [Optional]
+What it is: React for phones. Same components/props/state/hooks, rendering native mobile screens. Expo makes building and publishing much easier.
+Used for: a store companion app and personal mobile apps — hitting the same Node.js backend you already built.
+Why here: it reuses your React knowledge and your existing backend, so it's genuinely additive. Deliberately last: master the web stack before splitting focus to phones.
+ Publishing to the Play Store — [Optional]
+What it is: a Google Play Developer account (one-time signup fee) + Expo's submit tools to ship your app.
+Used for: getting your app onto Android devices. (The same code can target Apple's App Store with a separate paid account + a Mac.)
+ RevenueCat — [Optional]
+What it is: a tool that manages digital subscriptions across Android/iOS with a JavaScript SDK.
+Used for: only if you sell digital subscriptions in-app. Note: selling your store's physical products through an app uses Stripe directly and owes the app stores nothing — store billing only applies to digital goods.
+
+Small project: a mobile companion app that shows your store's products from the same backend as your website.
+
+At-a-glance: where to focus
+
+Must-learn (the critical path to a working store): JavaScript · HTML/CSS basics · Git · React · Next.js · Tailwind · Vercel · PostgreSQL (via Prisma) · Prisma · TypeScript · Authentication · Stripe · one store path (Shopify or Medusa/headless).
+
+Optional / nice-to-have (defer or skip): Deep SQL · React Native + Expo · Play Store publishing · RevenueCat · mobile subscriptions.
+
+The through-line: one language (JavaScript → TypeScript) carries you from a plain web page (Phase 1) to organized interfaces (Phase 2) to real live sites (Phase 3) to saved data (Phase 4) to robustness (Phase 5) to accounts and money (Phase 6) to a launched store (Phase 7) — and optionally onto phones (Phase 8), reusing the very same backend. Every phase is the previous one plus one new capability. No silos.
